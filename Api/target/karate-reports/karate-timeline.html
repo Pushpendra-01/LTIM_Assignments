@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Features\/ApiAssignment[1:19]","start":1713183862864,"end":1713183876577,"title":"Features\/ApiAssignment[1:19] 17:54:22.864-17:54:36.577 Getting all the booking id's"},{"id":2,"group":1,"content":"Features\/ApiAssignment[2:26]","start":1713183876584,"end":1713183877853,"title":"Features\/ApiAssignment[2:26] 17:54:36.584-17:54:37.853 Getting single booking"},{"id":3,"group":1,"content":"Features\/ApiAssignment[3:36]","start":1713183877867,"end":1713183879208,"title":"Features\/ApiAssignment[3:36] 17:54:37.867-17:54:39.208 Create Booking Validation"},{"id":4,"group":1,"content":"Features\/ApiAssignment[4:51]","start":1713183879214,"end":1713183880458,"title":"Features\/ApiAssignment[4:51] 17:54:39.214-17:54:40.458 Update Booking Validation"},{"id":5,"group":1,"content":"Features\/ApiAssignment[5:66]","start":1713183880463,"end":1713183881757,"title":"Features\/ApiAssignment[5:66] 17:54:40.463-17:54:41.757 Partially updating the booking details"},{"id":6,"group":1,"content":"Features\/ApiAssignment[6:84]","start":1713183881762,"end":1713183883067,"title":"Features\/ApiAssignment[6:84] 17:54:41.762-17:54:43.067 Booking deletion validation","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
